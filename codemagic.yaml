@@ -9,8 +9,8 @@ workflows:
       ios_signing:
         distribution_type: app_store
         bundle_identifier: com.plant.Kuyman
-    groups:
-    - app_store_credentials
+      groups:
+      - app_store_credentials
       vars:
           XCODE_PROJECT: "PlantID.xcworkspace" # <-- Put the name of your workspace here.
           XCODE_SCHEME: "PlantID" # <-- Put the name of your scheme here.
