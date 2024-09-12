@@ -8,12 +8,14 @@ workflows:
     environment:
       ios_signing:
         distribution_type: app_store
-        bundle_identifier: io.codemagic.sample.iosnative
+        bundle_identifier: com.plant.Kuyman
+    groups:
+    - app_store_credentials
       vars:
           XCODE_PROJECT: "PlantID.xcworkspace" # <-- Put the name of your workspace here.
           XCODE_SCHEME: "PlantID" # <-- Put the name of your scheme here.
           BUNDLE_ID: "com.plant.Kuyman" # <-- Put your Bundle Id here.
-          APP_STORE_APP_ID: 6670615404 # 
+          APP_STORE_APP_ID: 6670615404 #
       xcode: latest
       cocoapods: default
     scripts:
@@ -38,13 +40,6 @@ workflows:
       - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
       - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
     publishing:
-      email:
-        recipients:
-          - user_1@example.com
-          - user_2@example.com
-        notify:
-          success: true
-          failure: false
       app_store_connect:
         auth: integration
 
