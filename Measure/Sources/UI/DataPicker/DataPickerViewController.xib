@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DataPickerViewController" customModule="PlantID_App" customModuleProvider="target">
+            <connections>
+                <outlet property="backgroundView" destination="g5O-zX-MHA" id="o7W-jK-fBv"/>
+                <outlet property="doneButton" destination="cWc-xj-jMc" id="EN3-5U-s5j"/>
+                <outlet property="pickerView" destination="FaQ-eG-7Kl" id="Who-Bi-Bif"/>
+                <outlet property="titleTextLabel" destination="Dix-tw-0O3" id="WsE-VS-h9t"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g5O-zX-MHA" customClass="CornerView" customModule="PlantID_App" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="486" width="393" height="366"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzp-Xg-DLq">
+                            <rect key="frame" x="337" y="22" width="34" height="34"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="34" id="SQE-dw-4Vc"/>
+                                <constraint firstAttribute="width" constant="34" id="xvB-yH-umy"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="Picker-Close"/>
+                            <connections>
+                                <action selector="closeAction:" destination="-1" eventType="touchUpInside" id="qRl-hQ-dOD"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next watering" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dix-tw-0O3">
+                            <rect key="frame" x="121.00000000000001" y="39.333333333333371" width="151.33333333333337" height="28.666666666666686"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                            <color key="textColor" red="0.25098039215686274" green="0.29019607843137252" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWc-xj-jMc">
+                            <rect key="frame" x="24" y="248" width="345" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="0VO-cF-er7"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Done" backgroundImage="Button-Background">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="doneAction:" destination="-1" eventType="touchUpInside" id="7gj-of-VEt"/>
+                            </connections>
+                        </button>
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FaQ-eG-7Kl">
+                            <rect key="frame" x="0.0" y="68" width="393" height="180"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="180" id="tbs-Xf-7DL"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="mqW-N9-sbg"/>
+                                <outlet property="delegate" destination="-1" id="BaJ-jO-3Lp"/>
+                            </connections>
+                        </pickerView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.96078431372549022" green="0.97254901960784312" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="FaQ-eG-7Kl" firstAttribute="top" secondItem="Dix-tw-0O3" secondAttribute="bottom" id="9Ea-YG-OEn"/>
+                        <constraint firstItem="jzp-Xg-DLq" firstAttribute="top" secondItem="g5O-zX-MHA" secondAttribute="top" constant="22" id="BRh-EP-VSu"/>
+                        <constraint firstAttribute="height" constant="366" id="CU9-1n-5no"/>
+                        <constraint firstItem="FaQ-eG-7Kl" firstAttribute="leading" secondItem="g5O-zX-MHA" secondAttribute="leading" id="Ci6-MA-Ecc"/>
+                        <constraint firstItem="cWc-xj-jMc" firstAttribute="leading" secondItem="g5O-zX-MHA" secondAttribute="leading" constant="24" id="ECx-9S-24u"/>
+                        <constraint firstItem="Dix-tw-0O3" firstAttribute="centerX" secondItem="g5O-zX-MHA" secondAttribute="centerX" id="ENw-Kv-lqp"/>
+                        <constraint firstAttribute="trailing" secondItem="cWc-xj-jMc" secondAttribute="trailing" constant="24" id="GE5-Bp-nbS"/>
+                        <constraint firstItem="cWc-xj-jMc" firstAttribute="top" secondItem="FaQ-eG-7Kl" secondAttribute="bottom" id="erL-6m-eZ3"/>
+                        <constraint firstAttribute="trailing" secondItem="jzp-Xg-DLq" secondAttribute="trailing" constant="22" id="jmG-vG-ho8"/>
+                        <constraint firstAttribute="trailing" secondItem="FaQ-eG-7Kl" secondAttribute="trailing" id="xn8-rK-q6b"/>
+                        <constraint firstAttribute="bottom" secondItem="cWc-xj-jMc" secondAttribute="bottom" constant="58" id="zY0-iS-yvb"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="g5O-zX-MHA" secondAttribute="trailing" id="JBz-oV-zr9"/>
+                <constraint firstItem="g5O-zX-MHA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Udf-vF-T4Z"/>
+                <constraint firstAttribute="bottom" secondItem="g5O-zX-MHA" secondAttribute="bottom" id="uN3-3s-tuF"/>
+            </constraints>
+            <point key="canvasLocation" x="76" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Button-Background" width="327" height="60"/>
+        <image name="Picker-Close" width="24" height="24"/>
+    </resources>
+</document>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyGardenRemoveViewController" customModule="PlantID_App" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelButton" destination="xw0-ZT-86h" id="9Fu-7Z-HsJ"/>
+                <outlet property="deleteButton" destination="wJA-uM-oMe" id="T1d-Sc-gjV"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W9d-ef-JI8">
+                    <rect key="frame" x="24" y="169" width="345" height="514"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="YWP-Bc-tpD">
+                            <rect key="frame" x="16" y="450" width="313" height="48"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xw0-ZT-86h">
+                                    <rect key="frame" x="0.0" y="0.0" width="148.66666666666666" height="48"/>
+                                    <color key="backgroundColor" red="0.9882352941176471" green="1" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Cancel">
+                                        <color key="titleColor" red="0.25098039215686274" green="0.29019607843137252" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="12"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="closeAction" destination="-1" eventType="touchUpInside" id="hpD-0a-z1H"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJA-uM-oMe">
+                                    <rect key="frame" x="164.66666666666663" y="0.0" width="148.33333333333337" height="48"/>
+                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="DELETE">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="12"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                            <integer key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                            <color key="value" red="1" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="deleteAction" destination="-1" eventType="touchUpInside" id="QDq-AO-Ejq"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="KO1-xZ-eZE"/>
+                            </constraints>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This action cannot be undone,  and all care data for the plant  will be lost." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHL-D5-swY">
+                            <rect key="frame" x="16" y="345.33333333333337" width="313" height="64.666666666666686"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                            <color key="textColor" red="0.5607843137254902" green="0.60392156862745094" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure you want to delete this plant?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZ4-ev-Oy9">
+                            <rect key="frame" x="16" y="264" width="313" height="57.333333333333314"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                            <color key="textColor" red="0.25098039215686274" green="0.29019607843137252" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyGarden-RemovePlain" translatesAutoresizingMaskIntoConstraints="NO" id="1vF-6A-w1d">
+                            <rect key="frame" x="72.666666666666686" y="24" width="200" height="200"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jw-P1-DBK">
+                            <rect key="frame" x="285" y="16" width="44" height="44"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="Close"/>
+                            <connections>
+                                <action selector="closeAction" destination="-1" eventType="touchUpInside" id="YKZ-6S-AKL"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="1vF-6A-w1d" firstAttribute="centerX" secondItem="W9d-ef-JI8" secondAttribute="centerX" id="30a-uH-Evb"/>
+                        <constraint firstItem="YWP-Bc-tpD" firstAttribute="top" secondItem="VHL-D5-swY" secondAttribute="bottom" constant="40" id="7UT-Px-UwJ"/>
+                        <constraint firstAttribute="bottom" secondItem="YWP-Bc-tpD" secondAttribute="bottom" constant="16" id="7cM-Cn-JZ2"/>
+                        <constraint firstItem="VHL-D5-swY" firstAttribute="leading" secondItem="W9d-ef-JI8" secondAttribute="leading" constant="16" id="GBS-Rx-lSp"/>
+                        <constraint firstItem="6jw-P1-DBK" firstAttribute="top" secondItem="W9d-ef-JI8" secondAttribute="top" constant="16" id="GiK-qW-eFy"/>
+                        <constraint firstItem="YWP-Bc-tpD" firstAttribute="leading" secondItem="W9d-ef-JI8" secondAttribute="leading" constant="16" id="Jj7-jL-6o7"/>
+                        <constraint firstItem="uZ4-ev-Oy9" firstAttribute="top" secondItem="1vF-6A-w1d" secondAttribute="bottom" constant="40" id="Kek-jb-b8h"/>
+                        <constraint firstAttribute="trailing" secondItem="6jw-P1-DBK" secondAttribute="trailing" constant="16" id="NR9-UI-ac0"/>
+                        <constraint firstItem="uZ4-ev-Oy9" firstAttribute="leading" secondItem="W9d-ef-JI8" secondAttribute="leading" constant="16" id="SlR-HL-PDt"/>
+                        <constraint firstAttribute="trailing" secondItem="uZ4-ev-Oy9" secondAttribute="trailing" constant="16" id="UV7-nU-Kdx"/>
+                        <constraint firstAttribute="trailing" secondItem="YWP-Bc-tpD" secondAttribute="trailing" constant="16" id="Vo7-kO-CUs"/>
+                        <constraint firstAttribute="trailing" secondItem="VHL-D5-swY" secondAttribute="trailing" constant="16" id="azh-7f-vzT"/>
+                        <constraint firstItem="VHL-D5-swY" firstAttribute="top" secondItem="uZ4-ev-Oy9" secondAttribute="bottom" constant="24" id="xyc-Ia-OT7"/>
+                        <constraint firstAttribute="height" constant="514" id="zxV-mb-ehd"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="W9d-ef-JI8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="0aR-mJ-Fc1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="W9d-ef-JI8" secondAttribute="trailing" constant="24" id="YCa-A6-v8E"/>
+                <constraint firstItem="W9d-ef-JI8" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="c2Q-9Q-QNY"/>
+            </constraints>
+            <point key="canvasLocation" x="76" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Close" width="44" height="44"/>
+        <image name="MyGarden-RemovePlain" width="200" height="200"/>
+    </resources>
+</document>

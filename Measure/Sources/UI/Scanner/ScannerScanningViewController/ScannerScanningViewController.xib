@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScannerScanningViewController" customModule="PlantID_App" customModuleProvider="target">
+            <connections>
+                <outlet property="scanningImageView" destination="nRN-G2-ude" id="eih-pw-cAG"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nRN-G2-ude">
+                    <rect key="frame" x="107.66666666666669" y="311" width="178" height="230"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Scanner-Mask" translatesAutoresizingMaskIntoConstraints="NO" id="LG9-33-rnC">
+                    <rect key="frame" x="95.666666666666686" y="299" width="202" height="254"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="254" id="gWE-Tg-h7P"/>
+                        <constraint firstAttribute="width" constant="202" id="ncA-HD-uJT"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please wait, plant identification is in progress" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Os6-oO-tiu">
+                    <rect key="frame" x="48" y="587" width="297" height="48"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                    <color key="textColor" red="0.25098039215686274" green="0.29019607843137252" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Os6-oO-tiu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="48" id="7oI-8Q-u3b"/>
+                <constraint firstItem="LG9-33-rnC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Cjn-dh-bS5"/>
+                <constraint firstItem="Os6-oO-tiu" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="DIA-Mc-0fw"/>
+                <constraint firstItem="nRN-G2-ude" firstAttribute="leading" secondItem="LG9-33-rnC" secondAttribute="leading" constant="12" id="Uyl-J1-V7G"/>
+                <constraint firstAttribute="trailing" secondItem="Os6-oO-tiu" secondAttribute="trailing" constant="48" id="Y74-YA-bTx"/>
+                <constraint firstItem="nRN-G2-ude" firstAttribute="trailing" secondItem="LG9-33-rnC" secondAttribute="trailing" constant="-12" id="aht-u7-Jzx"/>
+                <constraint firstItem="nRN-G2-ude" firstAttribute="bottom" secondItem="LG9-33-rnC" secondAttribute="bottom" constant="-12" id="gVW-vw-RXs"/>
+                <constraint firstItem="LG9-33-rnC" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="jbI-3m-S74"/>
+                <constraint firstItem="nRN-G2-ude" firstAttribute="top" secondItem="LG9-33-rnC" secondAttribute="top" constant="12" id="sRP-MJ-0Ku"/>
+                <constraint firstItem="Os6-oO-tiu" firstAttribute="top" secondItem="LG9-33-rnC" secondAttribute="bottom" constant="34" id="uAd-s5-uaL"/>
+            </constraints>
+            <point key="canvasLocation" x="76" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Scanner-Mask" width="202" height="254"/>
+    </resources>
+</document>

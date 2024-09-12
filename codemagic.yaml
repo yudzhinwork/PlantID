@@ -1,0 +1,67 @@
+workflows:
+    ios-workflow:
+      name: iOS Workflow
+      environment:
+        groups:
+         - app_store_credentials # <-- (APP_STORE_CONNECT_ISSUER_ID, APP_STORE_CONNECT_KEY_IDENTIFIER, APP_STORE_CONNECT_PRIVATE_KEY)
+            # APP_STORE_CONNECT_ISSUER_ID <-- Put your App Store Connect Issuer Id here 
+            # APP_STORE_CONNECT_KEY_IDENTIFIER <-- Put your App Store Connect Key Identifier here 
+            # APP_STORE_CONNECT_PRIVATE_KEY <-- Put your App Store Connect Private Key here
+            # See the following link for more details - https://docs.codemagic.io/code-signing-yaml/signing-ios/
+            # https://appstoreconnect.apple.com/access/api
+         # - certificate_credentials # <-- (CERTIFICATE_PRIVATE_KEY - Put your Certificate Private Key here) - app_store_credentials # <-- (APP_STORE_CONNECT_ISSUER_ID, APP_STORE_CONNECT_KEY_IDENTIFIER, APP_STORE_CONNECT_PRIVATE_KEY)
+        vars:
+          XCODE_PROJECT: "PlantID.xcworkspace" # <-- Put the name of your workspace here.
+          XCODE_SCHEME: "PlantID" # <-- Put the name of your scheme here.
+          BUNDLE_ID: "com.plant.Kuyman" # <-- Put your Bundle Id here.
+          APP_STORE_APP_ID: 6670615404 # <-- Put the app id number here. This is found in App Store Connect > App > General > App Information
+        xcode: latest
+      scripts:
+        - name: Test echo
+          script: |
+            echo $APP_STORE_CONNECT_ISSUER_ID
+            echo $APP_STORE_CONNECT_KEY_IDENTIFIER
+            echo $APP_STORE_CONNECT_PRIVATE_KEY
+            echo $CERTIFICATE_PRIVATE_KEY
+        - name: Set up keychain to be used for codesigning using Codemagic CLI 'keychain' command
+          script: |
+            keychain initialize
+        - name: Fetch signing files
+          script: |
+            app-store-connect fetch-signing-files $BUNDLE_ID --type IOS_APP_STORE --create
+        - name: Use system default keychain
+          script: |
+            keychain add-certificates
+        - name: Set up code signing settings on Xcode project
+          script: |
+            xcode-project use-profiles
+        - name: Change Bundle ID for release
+          script: |
+            new_bundle_id=$BUNDLE_ID
+            project=$(ls | grep .xcodeproj)
+            old_bundle_id=$(awk -F '=' '/PRODUCT_BUNDLE_IDENTIFIER/ {print $2; exit}' ./"$project"/project.pbxproj)
+            old_bundle_id=${old_bundle_id:0:$((${#old_bundle_id} - 1))}
+            sed -i '' "s/${old_bundle_id}/${new_bundle_id}/g" ./"$project"/project.pbxproj
+        - name: Build ipa for distribution
+          script: |
+           set -e
+           set -x
+            xcode-project use-profiles
+            xcode-project build-ipa \
+              --project "$XCODE_PROJECT" \
+              --scheme "$XCODE_SCHEME" \
+              --archive-flags "-destination 'generic/platform=iOS'" \
+              --archive-xcargs "CODE_SIGNING_REQUIRED=YES CODE_SIGNING_ALLOWED=NO"
+      artifacts:
+        - build/ios/ipa/*.ipa
+        - /tmp/xcodebuild_logs/*.log
+        - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
+      publishing:
+        app_store_connect:   # https://docs.codemagic.io/publishing-yaml/distribution
+            api_key: $APP_STORE_CONNECT_PRIVATE_KEY         # Contents of the API key, can also reference environment variable such as $APP_STORE_CONNECT_PRIVATE_KEY
+            key_id: $APP_STORE_CONNECT_KEY_IDENTIFIER       # Alphanumeric value that identifies the API key, can also reference environment variable such as $APP_STORE_CONNECT_KEY_IDENTIFIER
+            issuer_id: $APP_STORE_CONNECT_ISSUER_ID         # Alphanumeric value that identifies who created the API key, can also reference environment variable such as $APP_STORE_CONNECT_ISSUER_ID
+            submit_to_testflight: false                     # Optional boolean, defaults to false. Whether or not to submit the uploaded build to TestFlight beta review. Required for distributing to beta groups. Note: This action is performed during post-processing.
+            # beta_groups:                                  # Specify the names of beta tester groups that will get access to the build once it has passed beta review.
+            #       - group name 1
+            #       - group name 2

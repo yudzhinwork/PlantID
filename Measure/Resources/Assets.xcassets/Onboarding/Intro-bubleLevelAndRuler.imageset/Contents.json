@@ -1,0 +1,22 @@
+{
+  "images" : [
+    {
+      "filename" : "Intro-bubleLevelAndRuler.pdf",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "Intro-bubleLevelAndRuler 1.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

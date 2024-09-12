@@ -1,0 +1,70 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2024-03-27 13:29:32",
+    "containerVersion": {
+        "path": "accounts/6223919825/containers/181236062/versions/1",
+        "accountId": "6223919825",
+        "containerId": "181236062",
+        "containerVersionId": "1",
+        "name": "Empty Container",
+        "container": {
+            "path": "accounts/6223919825/containers/181236062",
+            "accountId": "6223919825",
+            "containerId": "181236062",
+            "name": "measureapp",
+            "publicId": "GTM-KBRPT4Z9",
+            "usageContext": [
+                "IOS_SDK_5"
+            ],
+            "fingerprint": "1711536571896",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6223919825/containers/181236062/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": false
+            },
+            "tagIds": [
+                "GTM-KBRPT4Z9"
+            ]
+        },
+        "builtInVariable": [
+            {
+                "accountId": "6223919825",
+                "containerId": "181236062",
+                "type": "APP_ID",
+                "name": "App ID"
+            },
+            {
+                "accountId": "6223919825",
+                "containerId": "181236062",
+                "type": "APP_NAME",
+                "name": "App Name"
+            },
+            {
+                "accountId": "6223919825",
+                "containerId": "181236062",
+                "type": "APP_VERSION_CODE",
+                "name": "App Version Code"
+            },
+            {
+                "accountId": "6223919825",
+                "containerId": "181236062",
+                "type": "EVENT_NAME",
+                "name": "Event Name"
+            }
+        ],
+        "fingerprint": "1711536571899",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6223919825/containers/181236062/versions/1?apiLink=version"
+    }
+}
