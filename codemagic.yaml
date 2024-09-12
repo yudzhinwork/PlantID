@@ -6,8 +6,6 @@ workflows:
     integrations:
       app_store_connect: codemagic
     environment:
-      ios_signing:
-        bundle_identifier: com.plant.Kuyman
       groups:
       - app_store_credentials
       vars:
