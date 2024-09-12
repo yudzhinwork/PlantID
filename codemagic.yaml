@@ -4,8 +4,8 @@ workflows:
       environment:
         groups:
          - app_store_credentials # <-- (APP_STORE_CONNECT_ISSUER_ID, APP_STORE_CONNECT_KEY_IDENTIFIER, APP_STORE_CONNECT_PRIVATE_KEY)
-            # APP_STORE_CONNECT_ISSUER_ID <-- Put your App Store Connect Issuer Id here 
-            # APP_STORE_CONNECT_KEY_IDENTIFIER <-- Put your App Store Connect Key Identifier here 
+            # APP_STORE_CONNECT_ISSUER_ID <-- Put your App Store Connect Issuer Id here
+            # APP_STORE_CONNECT_KEY_IDENTIFIER <-- Put your App Store Connect Key Identifier here
             # APP_STORE_CONNECT_PRIVATE_KEY <-- Put your App Store Connect Private Key here
             # See the following link for more details - https://docs.codemagic.io/code-signing-yaml/signing-ios/
             # https://appstoreconnect.apple.com/access/api
@@ -16,7 +16,11 @@ workflows:
           BUNDLE_ID: "com.plant.Kuyman" # <-- Put your Bundle Id here.
           APP_STORE_APP_ID: 6670615404 # <-- Put the app id number here. This is found in App Store Connect > App > General > App Information
         xcode: latest
+        cocoapods: default
       scripts:
+        - name: Install CocoaPods dependencies
+          script: |
+            pod install
         - name: Test echo
           script: |
             echo $APP_STORE_CONNECT_ISSUER_ID
@@ -44,14 +48,9 @@ workflows:
             sed -i '' "s/${old_bundle_id}/${new_bundle_id}/g" ./"$project"/project.pbxproj
         - name: Build ipa for distribution
           script: |
-           set -e
-           set -x
-            xcode-project use-profiles
             xcode-project build-ipa \
-              --project "$XCODE_PROJECT" \
-              --scheme "$XCODE_SCHEME" \
-              --archive-flags "-destination 'generic/platform=iOS'" \
-              --archive-xcargs "CODE_SIGNING_REQUIRED=YES CODE_SIGNING_ALLOWED=NO"
+            --workspace "$CM_BUILD_DIR/$XCODE_WORKSPACE" \
+            --scheme "$XCODE_SCHEME"
       artifacts:
         - build/ios/ipa/*.ipa
         - /tmp/xcodebuild_logs/*.log
