@@ -96,8 +96,6 @@ class MainViewController: UIViewController {
         setupNavigationBar()
         setupHierarchy()
         setupLayout()
-        
-        requestTracking { }
     }
 
     // MARK: - Setup
