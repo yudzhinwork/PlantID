@@ -95,7 +95,7 @@ final class CustomButton: UIButton {
         
         let regularAttributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.systemFont(ofSize: 14, weight: .medium),
-            .foregroundColor: UIColor(hexString: "#8F9A8C")
+            .foregroundColor: UIColor(hexString: "#8F9A8C")!
         ]
         let priceAttributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.systemFont(ofSize: 14, weight: .heavy),
