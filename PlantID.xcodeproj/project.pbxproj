@@ -1005,7 +1005,6 @@
 				993155E62B6BE26A0008EE8C /* XCRemoteSwiftPackageReference "SPAlert" */,
 				BB9E2C2C2C2AC7F900F339FE /* XCRemoteSwiftPackageReference "GBDeviceInfo" */,
 				BB23F5DC2C93497100AAA386 /* XCRemoteSwiftPackageReference "ApphudSDK" */,
-				BB516C4B2C97B06A008BD8E6 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = FAEF71442B465668000C232A /* Products */;
 			projectDirPath = "";
@@ -1439,7 +1438,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.plant.Kuyman;
 				PRODUCT_NAME = "PlantID App";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1585,14 +1587,6 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 3.4.0;
-			};
-		};
-		BB516C4B2C97B06A008BD8E6 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift";
-			requirement = {
-				branch = master;
-				kind = branch;
 			};
 		};
 		BB9E2C2C2C2AC7F900F339FE /* XCRemoteSwiftPackageReference "GBDeviceInfo" */ = {
