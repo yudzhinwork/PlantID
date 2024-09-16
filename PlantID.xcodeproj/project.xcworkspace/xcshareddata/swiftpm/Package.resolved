@@ -1,0 +1,51 @@
+{
+  "originHash" : "f9ea13b1025f0a3f87940729d99e5e74461db161e47ec98fac6f1802c19e18d7",
+  "pins" : [
+    {
+      "identity" : "apphudsdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apphud/ApphudSDK",
+      "state" : {
+        "revision" : "cbdaff4937b9079ecaf2da92b62d8a7254deb0d0",
+        "version" : "3.5.0"
+      }
+    },
+    {
+      "identity" : "gbdeviceinfo",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/lmirosevic/GBDeviceInfo",
+      "state" : {
+        "revision" : "f746467bc807c4014adf8acbb6524e3326388d73",
+        "version" : "7.2.0"
+      }
+    },
+    {
+      "identity" : "realm-core",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/realm/realm-core.git",
+      "state" : {
+        "revision" : "f98720a07e6150c41c953e1937108225550ba155",
+        "version" : "20.0.0"
+      }
+    },
+    {
+      "identity" : "realm-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/realm/realm-swift",
+      "state" : {
+        "revision" : "7ea8be1f74034bae860120d58d3491c4fcedff5b",
+        "version" : "20.0.0"
+      }
+    },
+    {
+      "identity" : "spalert",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ivanvorobei/SPAlert",
+      "state" : {
+        "revision" : "3b73be8db5a7e7efaf474c6ed919f5a437d843c9",
+        "version" : "5.1.9"
+      }
+    }
+  ],
+  "version" : 3
+}

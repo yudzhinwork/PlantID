@@ -3,4 +3,66 @@
    uuid = "9DDE2314-1125-4FA2-A8A1-9321DCC927D8"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "62D1EEE9-83EB-4D6B-BF29-40CFF8C8069B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Measure/PremiumManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "268"
+            endingLineNumber = "268"
+            landmarkName = "collectProducts()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "62D1EEE9-83EB-4D6B-BF29-40CFF8C8069B - ab357609e35cb6f1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async throws -&gt; () in closure #1 @Sendable () async -&gt; Swift.Task&lt;(), Swift.Error&gt; in PlantID_App.PremiumManager.collectProducts() -&gt; ()"
+                  moduleName = "PlantID App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/SergeyTszyu/Documents/PlantID/Measure/PremiumManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "269"
+                  endingLineNumber = "269">
+               </Location>
+               <Location
+                  uuid = "62D1EEE9-83EB-4D6B-BF29-40CFF8C8069B - ba15e88861f4b49b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) await resume partial function for closure #1 @Sendable () async throws -&gt; () in closure #1 @Sendable () async -&gt; Swift.Task&lt;(), Swift.Error&gt; in PlantID_App.PremiumManager.collectProducts() -&gt; ()"
+                  moduleName = "PlantID App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/SergeyTszyu/Documents/PlantID/Measure/PremiumManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "269"
+                  endingLineNumber = "269">
+               </Location>
+               <Location
+                  uuid = "62D1EEE9-83EB-4D6B-BF29-40CFF8C8069B - daf057966231f4f3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for closure #1 @Sendable () async throws -&gt; () in closure #1 @Sendable () async -&gt; Swift.Task&lt;(), Swift.Error&gt; in PlantID_App.PremiumManager.collectProducts() -&gt; ()"
+                  moduleName = "PlantID App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/SergeyTszyu/Documents/PlantID/Measure/PremiumManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "269"
+                  endingLineNumber = "269">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
