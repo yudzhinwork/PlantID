@@ -1,6 +1,7 @@
 import UIKit
 import ApphudSDK
 import AlertKit
+import Combine
 
 final class PaywallViewController: BaseViewController {
 
@@ -70,7 +71,7 @@ final class PaywallViewController: BaseViewController {
     
     private(set) lazy var annuallyButton: CustomButton = {
         let button = CustomButton()
-        button.configure(topText: "Billed annually ", price: PremiumManager.annuallyPrice, periodText: "billed annually", period: "Yearly", isChosen: false)
+        button.configure(topText: "Billed annually ", price: PremiumManager.shared.annuallyPrice, periodText: "billed annually", period: "Yearly", isChosen: false)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(annuallyButtonTapped), for: .touchUpInside)
         return button
@@ -78,7 +79,7 @@ final class PaywallViewController: BaseViewController {
     
     private(set) lazy var weeklyButton: CustomButton = {
         let button = CustomButton()
-        button.configure(topText: "Billed weekly  ", price: PremiumManager.weeklyPrice, periodText: "week", period: "Weekly", isChosen: true)
+        button.configure(topText: "Billed weekly  ", price: PremiumManager.shared.weeklyPrice, periodText: "week", period: "Weekly", isChosen: true)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(weeklyButtonTapped), for: .touchUpInside)
         return button
@@ -124,6 +125,8 @@ final class PaywallViewController: BaseViewController {
     var viewModel: OnboardingViewModel?
     var delegateRouting: OnboardingRouterDelegate?
     
+    private var cancellables = Set<AnyCancellable>()
+    
     // MARK: - Life cycle
     
     override func viewDidLoad() {
@@ -132,6 +135,20 @@ final class PaywallViewController: BaseViewController {
         
         skipButton.isHidden = true
         Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(showCloseButton), userInfo: nil, repeats: false)
+        
+        PremiumManager.shared.$weeklyPrice
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] newPrice in
+                self?.updatePriceButtons()
+            }
+            .store(in: &cancellables)
+
+        PremiumManager.shared.$annuallyPrice
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] newPrice in
+                self?.updatePriceButtons()
+            }
+            .store(in: &cancellables)
     }
     
     override func viewDidLayoutSubviews() {
@@ -144,6 +161,11 @@ final class PaywallViewController: BaseViewController {
         super.viewWillAppear(animated)
         
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    func updatePriceButtons() {
+        weeklyButton.configure(topText: "Billed weekly", price: PremiumManager.shared.weeklyPrice, periodText: "week", period: "Weekly", isChosen: true)
+        annuallyButton.configure(topText: "Billed annually", price: PremiumManager.shared.annuallyPrice, periodText: "billed annually", period: "Yearly", isChosen: false)
     }
     
     @objc func skipPressed() {

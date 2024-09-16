@@ -251,8 +251,8 @@ final class PremiumManager {
     
     static let shared = PremiumManager()
     
-    static var weeklyPrice = "$6.99"
-    static var annuallyPrice = "$49.99"
+    @Published var weeklyPrice = "$6.99"
+    @Published var annuallyPrice = "$49.99"
     
     static var weeklyProduct: ApphudProduct?
     static var annuallyProduct: ApphudProduct?
@@ -263,40 +263,20 @@ final class PremiumManager {
     
     @MainActor func collectProducts() {
         Task {
-            Task {
-                let products = try await Apphud.fetchProducts()
-
-                let onboardingPlacement = await Apphud.placement(ApphudPlacementID.onboarding.rawValue)
-              if let paywall = onboardingPlacement?.paywall {
-                    let apphudProducts = paywall.products
-//                  Apphud.paywallShown(paywall)
-                    // setup your UI with these products
-              }
+            let products = try await Apphud.fetchProducts()
+            products.forEach { product in
+                let p = Apphud.apphudProductFor(product)
+                switch product.id {
+                case "annual.s":
+                    PremiumManager.annuallyProduct = p
+                    PremiumManager.shared.annuallyPrice = product.displayPrice
+                case "weekly.s":
+                    PremiumManager.weeklyProduct = p
+                    PremiumManager.shared.weeklyPrice = product.displayPrice
+                default:
+                    break
+                }
             }
-//          if let paywall = await Apphud.paywall("Pay_wall") {
-//              let apphudProducts = paywall.products
-//              apphudProducts.forEach { product in
-//                  switch product.productId {
-//                  case "annual.s":
-//                      PremiumManager.annuallyProduct = product
-//                  case "weekly.s":
-//                      PremiumManager.weeklyProduct = product
-//                  default:
-//                      break
-//                  }
-//                  if let skProd = product.skProduct {
-//                      let localizedPrice = skProd.localizedPrice()
-//                      switch product.productId {
-//                      case "annual.s":
-//                          PremiumManager.annuallyPrice = localizedPrice
-//                      case "weekly.s":
-//                          PremiumManager.annuallyPrice = localizedPrice
-//                      default:
-//                          break
-//                      }
-//                  }
-//              }
-//          }
         }
     }
 }

@@ -7,59 +7,91 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "62D1EEE9-83EB-4D6B-BF29-40CFF8C8069B"
+            uuid = "59829B9A-DD84-40E7-B398-BB715739EF08"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Measure/PremiumManager.swift"
+            filePath = "Measure/Sources/UI/Paywall/PaywallViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "268"
-            endingLineNumber = "268"
-            landmarkName = "collectProducts()"
+            startingLineNumber = "299"
+            endingLineNumber = "299"
+            landmarkName = "buyTapped()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "62D1EEE9-83EB-4D6B-BF29-40CFF8C8069B - ab357609e35cb6f1"
+                  uuid = "59829B9A-DD84-40E7-B398-BB715739EF08 - 3b236517502df3ea"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async throws -&gt; () in closure #1 @Sendable () async -&gt; Swift.Task&lt;(), Swift.Error&gt; in PlantID_App.PremiumManager.collectProducts() -&gt; ()"
+                  symbolName = "PlantID_App.PaywallViewController.buyTapped() -&gt; ()"
                   moduleName = "PlantID App"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/SergeyTszyu/Documents/PlantID/Measure/PremiumManager.swift"
+                  urlString = "file:///Users/SergeyTszyu/Documents/PlantID/Measure/Sources/UI/Paywall/PaywallViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "269"
-                  endingLineNumber = "269">
+                  startingLineNumber = "299"
+                  endingLineNumber = "299">
                </Location>
                <Location
-                  uuid = "62D1EEE9-83EB-4D6B-BF29-40CFF8C8069B - ba15e88861f4b49b"
+                  uuid = "59829B9A-DD84-40E7-B398-BB715739EF08 - c557423babf30e52"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(4) await resume partial function for closure #1 @Sendable () async throws -&gt; () in closure #1 @Sendable () async -&gt; Swift.Task&lt;(), Swift.Error&gt; in PlantID_App.PremiumManager.collectProducts() -&gt; ()"
+                  symbolName = "closure #2 (ApphudSDK.ApphudPurchaseResult) -&gt; () in PlantID_App.PaywallViewController.buyTapped() -&gt; ()"
                   moduleName = "PlantID App"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/SergeyTszyu/Documents/PlantID/Measure/PremiumManager.swift"
+                  urlString = "file:///Users/SergeyTszyu/Documents/PlantID/Measure/Sources/UI/Paywall/PaywallViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "269"
-                  endingLineNumber = "269">
+                  startingLineNumber = "299"
+                  endingLineNumber = "299">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3049BD3E-8E8B-4E51-8613-C19B51A26330"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Measure/Sources/UI/Paywall/PaywallViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "290"
+            endingLineNumber = "290"
+            landmarkName = "buyTapped()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3049BD3E-8E8B-4E51-8613-C19B51A26330 - 3b236517502df103"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PlantID_App.PaywallViewController.buyTapped() -&gt; ()"
+                  moduleName = "PlantID App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/SergeyTszyu/Documents/PlantID/Measure/Sources/UI/Paywall/PaywallViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "290"
+                  endingLineNumber = "290">
                </Location>
                <Location
-                  uuid = "62D1EEE9-83EB-4D6B-BF29-40CFF8C8069B - daf057966231f4f3"
+                  uuid = "3049BD3E-8E8B-4E51-8613-C19B51A26330 - 3b236517502df103"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(5) suspend resume partial function for closure #1 @Sendable () async throws -&gt; () in closure #1 @Sendable () async -&gt; Swift.Task&lt;(), Swift.Error&gt; in PlantID_App.PremiumManager.collectProducts() -&gt; ()"
+                  symbolName = "PlantID_App.PaywallViewController.buyTapped() -&gt; ()"
                   moduleName = "PlantID App"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/SergeyTszyu/Documents/PlantID/Measure/PremiumManager.swift"
+                  urlString = "file:///Users/SergeyTszyu/Documents/PlantID/Measure/Sources/UI/Paywall/PaywallViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "269"
-                  endingLineNumber = "269">
+                  startingLineNumber = "290"
+                  endingLineNumber = "290">
                </Location>
             </Locations>
          </BreakpointContent>
