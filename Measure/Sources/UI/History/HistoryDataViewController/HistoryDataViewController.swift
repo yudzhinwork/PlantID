@@ -58,7 +58,7 @@ final class HistoryDataViewController: BaseViewController {
     private let saveButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "Result-Save")!, for: .normal)
-        button.addTarget(self, action: #selector(saveAction), for: .touchUpInside)
+        button.addTarget(HistoryDataViewController.self, action: #selector(saveAction), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -66,7 +66,7 @@ final class HistoryDataViewController: BaseViewController {
     private let shareButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "Result-Share")!, for: .normal)
-        button.addTarget(self, action: #selector(shareAction), for: .touchUpInside)
+        button.addTarget(HistoryDataViewController.self, action: #selector(shareAction), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
