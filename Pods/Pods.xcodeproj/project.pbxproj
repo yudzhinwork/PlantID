@@ -1644,6 +1644,7 @@
 		};
 		9F43ADA34A89F1A471D3FCBC357A2148 /* [CP] Copy XCFrameworks */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
