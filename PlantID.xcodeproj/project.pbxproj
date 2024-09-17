@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9910CA252B6A63D900336735 /* AnalyticEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9910CA242B6A63D900336735 /* AnalyticEvent.swift */; };
 		9910CA312B6A64E600336735 /* PremiumManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9910CA302B6A64E600336735 /* PremiumManager.swift */; };
-		9910CA342B6A651900336735 /* requestTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9910CA332B6A651900336735 /* requestTracking.swift */; };
 		993155E82B6BE26A0008EE8C /* AlertKit in Frameworks */ = {isa = PBXBuildFile; productRef = 993155E72B6BE26A0008EE8C /* AlertKit */; };
 		993155EA2B6BEC7F0008EE8C /* Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993155E92B6BEC7F0008EE8C /* Url.swift */; };
 		993155EC2B6BF5720008EE8C /* IncreasedTapAreaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993155EB2B6BF5720008EE8C /* IncreasedTapAreaButton.swift */; };
@@ -157,7 +156,6 @@
 /* Begin PBXFileReference section */
 		9910CA242B6A63D900336735 /* AnalyticEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticEvent.swift; sourceTree = "<group>"; };
 		9910CA302B6A64E600336735 /* PremiumManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumManager.swift; sourceTree = "<group>"; };
-		9910CA332B6A651900336735 /* requestTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requestTracking.swift; sourceTree = "<group>"; };
 		993155E92B6BEC7F0008EE8C /* Url.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Url.swift; sourceTree = "<group>"; };
 		993155EB2B6BF5720008EE8C /* IncreasedTapAreaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreasedTapAreaButton.swift; sourceTree = "<group>"; };
 		999090582B88C190000FA8B6 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
@@ -330,7 +328,6 @@
 			isa = PBXGroup;
 			children = (
 				BB52F7852C16DE9D00FECB23 /* Manager */,
-				9910CA332B6A651900336735 /* requestTracking.swift */,
 				993155EB2B6BF5720008EE8C /* IncreasedTapAreaButton.swift */,
 				BBC752752BDF81FF008AA207 /* Device.swift */,
 				BB52F78A2C18262600FECB23 /* Converter.swift */,
@@ -1087,7 +1084,6 @@
 				BBD9B4012C8AADCE00E138E6 /* ScannerNotFoundViewController.swift in Sources */,
 				FAD536A32B4A7160009C57EE /* MainRoutingDelegate.swift in Sources */,
 				BB5B172A2C88823400E0769D /* ScannerFirstViewController.swift in Sources */,
-				9910CA342B6A651900336735 /* requestTracking.swift in Sources */,
 				FAEF71972B465BB9000C232A /* OnboardingCoordinator.swift in Sources */,
 				BB19E0B92C85935B009CED7D /* MyGardenCell.swift in Sources */,
 				FAC3541E2B468D6A00C473C5 /* OnboardingItems.swift in Sources */,
@@ -1330,7 +1326,6 @@
 				INFOPLIST_FILE = Measure/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Plant ID";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to identify and provide care tips for your plants through image recognition.";
-				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This information helps us to understand your app experience and preferences. You will get personalized advertising and special offers based on your activity inside the app.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -1368,7 +1363,6 @@
 				INFOPLIST_FILE = Measure/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Plant ID";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to identify and provide care tips for your plants through image recognition.";
-				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This information helps us to understand your app experience and preferences. You will get personalized advertising and special offers based on your activity inside the app.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
