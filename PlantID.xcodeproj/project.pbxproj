@@ -69,6 +69,7 @@
 		BBC0D74A2C8A82D400BBBEB9 /* PlantModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC0D7492C8A82D400BBBEB9 /* PlantModels.swift */; };
 		BBC752742BDF5580008AA207 /* GradientLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC752732BDF5580008AA207 /* GradientLabel.swift */; };
 		BBC752762BDF81FF008AA207 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC752752BDF81FF008AA207 /* Device.swift */; };
+		BBD4077D2C9B393D00FECBD3 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = BBBFF9342C985D1400737C36 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		BBD9B4002C8AADCE00E138E6 /* ScannerNotFoundViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD9B3FF2C8AADCE00E138E6 /* ScannerNotFoundViewController.xib */; };
 		BBD9B4012C8AADCE00E138E6 /* ScannerNotFoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9B3FE2C8AADCE00E138E6 /* ScannerNotFoundViewController.swift */; };
 		BBD9B4062C8AB84200E138E6 /* ScannerResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD9B4052C8AB84200E138E6 /* ScannerResultCell.xib */; };
@@ -152,6 +153,20 @@
 			remoteInfo = Measure;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BBD4077E2C9B393D00FECBD3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BBD4077D2C9B393D00FECBD3 /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9910CA242B6A63D900336735 /* AnalyticEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticEvent.swift; sourceTree = "<group>"; };
@@ -899,6 +914,7 @@
 				FAEF713F2B465668000C232A /* Sources */,
 				FAEF71402B465668000C232A /* Frameworks */,
 				FAEF71412B465668000C232A /* Resources */,
+				BBD4077E2C9B393D00FECBD3 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1318,8 +1334,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1355,8 +1372,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
