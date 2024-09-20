@@ -2,6 +2,7 @@ import UIKit
 import ApphudSDK
 import AlertKit
 import Combine
+import ApphudSDK
 
 final class PaywallViewController: BaseViewController {
 
@@ -93,9 +94,11 @@ final class PaywallViewController: BaseViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         let items = [
-            ("Paywall-List", "99.9% accuracy of identification"),
-            ("Paywall-List", "Take care of your plant"),
-            ("Paywall-List", "Tips and treatment for plants")
+            ("Paywall-List", "Quick Plant Disease Diagnosis"),
+            ("", "& Instant Solutions"),
+            ("Paywall-List", "Plant Care Tips and Treatment Methods"),
+            ("Paywall-List", "PlantAl Assistant"),
+            ("Paywall-List", "Extended Information")
         ]
         
         for item in items {
@@ -107,6 +110,7 @@ final class PaywallViewController: BaseViewController {
             
             let label = UILabel()
             label.text = item.1
+            label.numberOfLines = 0
             label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
             label.translatesAutoresizingMaskIntoConstraints = false
             label.textColor = UIColor(hexString: "#404A3E")
@@ -164,8 +168,8 @@ final class PaywallViewController: BaseViewController {
     }
     
     func updatePriceButtons() {
-        weeklyButton.configure(topText: "Billed weekly", price: PremiumManager.shared.weeklyPrice, periodText: "week", period: "Weekly", isChosen: true)
-        annuallyButton.configure(topText: "Billed annually", price: PremiumManager.shared.annuallyPrice, periodText: "billed annually", period: "Yearly", isChosen: false)
+        weeklyButton.configure(topText: "Billed weekly", price: PremiumManager.shared.weeklyPrice, periodText: "week", period: "Weekly", isChosen: false)
+        annuallyButton.configure(topText: "Billed annually", price: PremiumManager.shared.annuallyPrice, periodText: "billed annually", period: "Yearly", isChosen: true)
     }
     
     @objc func skipPressed() {
@@ -196,20 +200,20 @@ final class PaywallViewController: BaseViewController {
         view.addSubview(bottomButtonsStackView)
         
         NSLayoutConstraint.activate([
-            skipButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+            skipButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
             skipButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
             skipButton.heightAnchor.constraint(equalToConstant: 38),
             skipButton.widthAnchor.constraint(equalToConstant: 36),
             
-            titleLabel.topAnchor.constraint(equalTo: skipButton.bottomAnchor, constant: 16),
+            titleLabel.topAnchor.constraint(equalTo: skipButton.bottomAnchor, constant: 4),
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
             titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
             titleLabel.heightAnchor.constraint(equalToConstant: 42),
             
             featureListStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
-            featureListStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
-            featureListStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
-            featureListStackView.heightAnchor.constraint(equalToConstant: 90),
+            featureListStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            featureListStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            featureListStackView.heightAnchor.constraint(equalToConstant: 110),
             
             backgroundImageView.topAnchor.constraint(equalTo: featureListStackView.bottomAnchor, constant: 16),
             backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),

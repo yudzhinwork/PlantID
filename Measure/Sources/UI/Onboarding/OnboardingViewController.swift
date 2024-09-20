@@ -196,7 +196,7 @@ final class OnboardingViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         if currentIndex == pages.count - 1 {
-            Theme.buttonStyle(continueButton, title: "try 3 day free trial".uppercased())
+            continueButton.isHidden = true
         } else {
             Theme.buttonStyle(continueButton, title: "Continue")
         }

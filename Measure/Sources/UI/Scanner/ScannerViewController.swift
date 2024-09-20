@@ -4,6 +4,7 @@
 
 import UIKit
 import AVFoundation
+import ApphudSDK
 
 class ScannerViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, AVCapturePhotoCaptureDelegate {
     
@@ -129,8 +130,34 @@ class ScannerViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
 
     @IBAction func photoAction(_ sender: UIButton) {
-        let photoSettings = AVCapturePhotoSettings()
-        photoOutput.capturePhoto(with: photoSettings, delegate: self)
+        if Apphud.hasActiveSubscription() {
+            let photoSettings = AVCapturePhotoSettings()
+            photoOutput.capturePhoto(with: photoSettings, delegate: self)
+        } else if canPerformScan() {
+            let photoSettings = AVCapturePhotoSettings()
+            photoOutput.capturePhoto(with: photoSettings, delegate: self)
+            incrementScanCount()
+        } else {
+            let paywallViewController = PaywallViewController()
+            paywallViewController.modalPresentationStyle = .overFullScreen
+            paywallViewController.modalTransitionStyle = .crossDissolve
+            self.present(paywallViewController, animated: true)
+        }
+    }
+    
+    func incrementScanCount() {
+        let currentCount = UserDefaults.standard.integer(forKey: "scanCount")
+        UserDefaults.standard.set(currentCount + 1, forKey: "scanCount")
+    }
+    
+    func canPerformScan() -> Bool {
+        let scanCount = UserDefaults.standard.integer(forKey: "scanCount")
+        
+        if scanCount >= 1 {
+            return false
+        }
+        
+        return true
     }
     
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
