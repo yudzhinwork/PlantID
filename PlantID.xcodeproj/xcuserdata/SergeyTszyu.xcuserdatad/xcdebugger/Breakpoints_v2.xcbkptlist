@@ -20,21 +20,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "59829B9A-DD84-40E7-B398-BB715739EF08 - eee009cb1cf8c74c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (ApphudSDK.ApphudPurchaseResult) -&gt; () in PlantID_App.PaywallViewController.buyTapped() -&gt; ()"
-                  moduleName = "PlantID App.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/SergeyTszyu/Documents/PlantID/Measure/Sources/UI/Paywall/PaywallViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "302"
-                  endingLineNumber = "302">
-               </Location>
-               <Location
-                  uuid = "59829B9A-DD84-40E7-B398-BB715739EF08 - 10942ee7e7263af4"
+                  uuid = "59829B9A-DD84-40E7-B398-BB715739EF08 - 10942ee7e7263ad5"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -44,8 +30,22 @@
                   urlString = "file:///Users/SergeyTszyu/Documents/PlantID/Measure/Sources/UI/Paywall/PaywallViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "302"
-                  endingLineNumber = "302">
+                  startingLineNumber = "303"
+                  endingLineNumber = "303">
+               </Location>
+               <Location
+                  uuid = "59829B9A-DD84-40E7-B398-BB715739EF08 - eee009cb1cf8c76d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (ApphudSDK.ApphudPurchaseResult) -&gt; () in PlantID_App.PaywallViewController.buyTapped() -&gt; ()"
+                  moduleName = "PlantID App.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/SergeyTszyu/Documents/PlantID/Measure/Sources/UI/Paywall/PaywallViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "303"
+                  endingLineNumber = "303">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -66,7 +66,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "3049BD3E-8E8B-4E51-8613-C19B51A26330 - 10942ee7e7263923"
+                  uuid = "3049BD3E-8E8B-4E51-8613-C19B51A26330 - 10942ee7e726390c"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -76,11 +76,11 @@
                   urlString = "file:///Users/SergeyTszyu/Documents/PlantID/Measure/Sources/UI/Paywall/PaywallViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "293"
-                  endingLineNumber = "293">
+                  startingLineNumber = "294"
+                  endingLineNumber = "294">
                </Location>
                <Location
-                  uuid = "3049BD3E-8E8B-4E51-8613-C19B51A26330 - 10942ee7e7263923"
+                  uuid = "3049BD3E-8E8B-4E51-8613-C19B51A26330 - 10942ee7e726390c"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -90,8 +90,8 @@
                   urlString = "file:///Users/SergeyTszyu/Documents/PlantID/Measure/Sources/UI/Paywall/PaywallViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "293"
-                  endingLineNumber = "293">
+                  startingLineNumber = "294"
+                  endingLineNumber = "294">
                </Location>
             </Locations>
          </BreakpointContent>

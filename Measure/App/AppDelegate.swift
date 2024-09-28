@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ]?
     ) -> Bool {
         window?.overrideUserInterfaceStyle = .light
-        requestNotificationAuthorization()
+//        requestNotificationAuthorization()
         
         RealmController.shared.setup()
         PremiumManager.shared.setup()

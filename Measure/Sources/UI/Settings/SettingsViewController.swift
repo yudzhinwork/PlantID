@@ -145,15 +145,13 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
             cell.switchControl.isOn = isOn
             return cell
         } else {
-            // All other cells are SettingsListCell
             let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsListCell", for: indexPath) as! SettingsListCell
             let item = SettingsItems.itemsArray[indexPath.row]
-            cell.configure(item) // Assuming you have a method to configure the cell
+            cell.configure(item)
             return cell
         }
     }
     
-    // Set row height to 70 points
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 86
     }
@@ -163,17 +161,17 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         switch indexPath {
         case [0, 0]:
             break
-        case [0, 1]: // Technical support
+        case [0, 1]:
             viewModel.sendEmailToSupport()
-        case [1, 0]: // Share App
+        case [1, 0]:
             viewModel.shareApp()
-        case [1, 1]: // Rate us
+        case [1, 1]:
             viewModel.rateApp()
-        case [1, 2]: // Suggest Idea
+        case [1, 2]:
             viewModel.suggestIdeaAction()
-        case [0, 2]: // Privacy Policy
+        case [0, 2]:
             openURL(Url.privacy.rawValue)
-        case [0, 3]: // Terms of Use
+        case [0, 3]:
             openURL(Url.terms.rawValue)
         default:
             break
@@ -196,11 +194,18 @@ extension SettingsViewController: SettingsSwitchCellDelegate {
     
     func settingsSwitchCell(_ cell: SettingsSwitchCell, isOn: Bool) {
         if isOn {
-            let vc = DataPickerViewController()
-            vc.pickerType = .time
-            vc.modalPresentationStyle = .overFullScreen
-            vc.modalTransitionStyle = .crossDissolve
-            self.present(vc, animated: true)
+            let center = UNUserNotificationCenter.current()
+            center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+                if granted {
+                    DispatchQueue.main.async {
+                        let vc = DataPickerViewController()
+                        vc.pickerType = .time
+                        vc.modalPresentationStyle = .overFullScreen
+                        vc.modalTransitionStyle = .crossDissolve
+                        self.present(vc, animated: true)
+                    }
+                }
+            }
         } else {
             let center = UNUserNotificationCenter.current()
             center.removeAllPendingNotificationRequests()
