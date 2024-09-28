@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScannerScanningViewController" customModule="PlantID_App" customModuleProvider="target">
             <connections>
+                <outlet property="animationScanView" destination="q2Y-Ss-afH" id="soP-l9-vtB"/>
                 <outlet property="scanningImageView" destination="nRN-G2-ude" id="eih-pw-cAG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nRN-G2-ude">
-                    <rect key="frame" x="107.66666666666669" y="311" width="178" height="230"/>
+                    <rect key="frame" x="107.66666666666669" y="315" width="178" height="222"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -36,6 +37,10 @@
                         <constraint firstAttribute="width" constant="202" id="ncA-HD-uJT"/>
                     </constraints>
                 </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q2Y-Ss-afH">
+                    <rect key="frame" x="111.66666666666669" y="315" width="170" height="222"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please wait, plant identification is in progress" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Os6-oO-tiu">
                     <rect key="frame" x="48" y="587" width="297" height="48"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
@@ -46,18 +51,22 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="q2Y-Ss-afH" firstAttribute="leading" secondItem="LG9-33-rnC" secondAttribute="leading" constant="16" id="31k-8P-kEI"/>
+                <constraint firstItem="q2Y-Ss-afH" firstAttribute="top" secondItem="LG9-33-rnC" secondAttribute="top" constant="16" id="3sC-5d-j9M"/>
                 <constraint firstItem="Os6-oO-tiu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="48" id="7oI-8Q-u3b"/>
+                <constraint firstItem="q2Y-Ss-afH" firstAttribute="bottom" secondItem="LG9-33-rnC" secondAttribute="bottom" constant="-16" id="CbH-Oz-U3Z"/>
                 <constraint firstItem="LG9-33-rnC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Cjn-dh-bS5"/>
                 <constraint firstItem="Os6-oO-tiu" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="DIA-Mc-0fw"/>
+                <constraint firstItem="q2Y-Ss-afH" firstAttribute="trailing" secondItem="LG9-33-rnC" secondAttribute="trailing" constant="-16" id="Qx0-bX-Fqi"/>
                 <constraint firstItem="nRN-G2-ude" firstAttribute="leading" secondItem="LG9-33-rnC" secondAttribute="leading" constant="12" id="Uyl-J1-V7G"/>
                 <constraint firstAttribute="trailing" secondItem="Os6-oO-tiu" secondAttribute="trailing" constant="48" id="Y74-YA-bTx"/>
                 <constraint firstItem="nRN-G2-ude" firstAttribute="trailing" secondItem="LG9-33-rnC" secondAttribute="trailing" constant="-12" id="aht-u7-Jzx"/>
-                <constraint firstItem="nRN-G2-ude" firstAttribute="bottom" secondItem="LG9-33-rnC" secondAttribute="bottom" constant="-12" id="gVW-vw-RXs"/>
+                <constraint firstItem="nRN-G2-ude" firstAttribute="bottom" secondItem="LG9-33-rnC" secondAttribute="bottom" constant="-16" id="gVW-vw-RXs"/>
                 <constraint firstItem="LG9-33-rnC" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="jbI-3m-S74"/>
-                <constraint firstItem="nRN-G2-ude" firstAttribute="top" secondItem="LG9-33-rnC" secondAttribute="top" constant="12" id="sRP-MJ-0Ku"/>
+                <constraint firstItem="nRN-G2-ude" firstAttribute="top" secondItem="LG9-33-rnC" secondAttribute="top" constant="16" id="sRP-MJ-0Ku"/>
                 <constraint firstItem="Os6-oO-tiu" firstAttribute="top" secondItem="LG9-33-rnC" secondAttribute="bottom" constant="34" id="uAd-s5-uaL"/>
             </constraints>
-            <point key="canvasLocation" x="76" y="20"/>
+            <point key="canvasLocation" x="75.572519083969468" y="19.718309859154932"/>
         </view>
     </objects>
     <resources>

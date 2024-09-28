@@ -4,12 +4,16 @@
 
 import UIKit
 import RealmSwift
+import Lottie
 
 public let apiKey = "cYbFQfo56cJdlgoik5CaU48fy2hR3lfPx7u0ipcjY6231eTR5v"
 
 class ScannerScanningViewController: BaseViewController {
     
     @IBOutlet private weak var scanningImageView: UIImageView!
+    @IBOutlet private var animationScanView: UIView!
+    
+    private var animationView: LottieAnimationView?
     
     var scanningImage: UIImage!
     var scannerType: ScannerType = .identify
@@ -19,6 +23,14 @@ class ScannerScanningViewController: BaseViewController {
         scanningImageView.image = scanningImage
         guard let imageData = scanningImage.jpegData(compressionQuality: 0.8) else { return }
         processImage(imageData)
+        
+        animationView = .init(name: "Animation")
+        animationView!.frame = animationScanView.bounds
+        animationView!.contentMode = .scaleAspectFill
+        animationView!.loopMode = .loop
+        animationView!.animationSpeed = 1.0
+        animationScanView.addSubview(animationView!)
+        animationView!.play()
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -126,7 +126,18 @@ class ScannerViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
 
     @IBAction func mediaAction(_ sender: UIButton) {
-        
+        if canPerformScan() {
+            let imagePickerController = UIImagePickerController()
+            imagePickerController.delegate = self
+            imagePickerController.sourceType = .photoLibrary
+            imagePickerController.allowsEditing = false
+            present(imagePickerController, animated: true, completion: nil)
+        } else {
+            let paywallViewController = PaywallViewController()
+            paywallViewController.modalPresentationStyle = .overFullScreen
+            paywallViewController.modalTransitionStyle = .crossDissolve
+            self.present(paywallViewController, animated: true)
+        }
     }
 
     @IBAction func photoAction(_ sender: UIButton) {
@@ -136,7 +147,6 @@ class ScannerViewController: UIViewController, UIImagePickerControllerDelegate, 
         } else if canPerformScan() {
             let photoSettings = AVCapturePhotoSettings()
             photoOutput.capturePhoto(with: photoSettings, delegate: self)
-            incrementScanCount()
         } else {
             let paywallViewController = PaywallViewController()
             paywallViewController.modalPresentationStyle = .overFullScreen
@@ -195,6 +205,7 @@ class ScannerViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         if let image = info[.originalImage] as? UIImage {
             if let imageData = image.jpegData(compressionQuality: 0.8) {
+                incrementScanCount()
                 let vc = ScannerScanningViewController()
                 vc.scannerType = scannerType
                 vc.scanningImage = image
@@ -203,7 +214,6 @@ class ScannerViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
         picker.dismiss(animated: true)
     }
-
 }
 
 extension ScannerViewController: ScannerFirstViewControllerDelegate {

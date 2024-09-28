@@ -13,6 +13,8 @@
 		993155EA2B6BEC7F0008EE8C /* Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993155E92B6BEC7F0008EE8C /* Url.swift */; };
 		993155EC2B6BF5720008EE8C /* IncreasedTapAreaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993155EB2B6BF5720008EE8C /* IncreasedTapAreaButton.swift */; };
 		999090592B88C190000FA8B6 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999090582B88C190000FA8B6 /* AdSupport.framework */; };
+		BB0C7E2F2CA8338D00A57F6A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = BB0C7E2E2CA8338D00A57F6A /* Lottie */; };
+		BB0C7E332CA836B100A57F6A /* Animation.json in Resources */ = {isa = PBXBuildFile; fileRef = BB0C7E322CA836B100A57F6A /* Animation.json */; };
 		BB11E6072BB7266000C3D16B /* AreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB11E6002BB7266000C3D16B /* AreaViewController.swift */; };
 		BB11E6092BB7266000C3D16B /* LineNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB11E6022BB7266000C3D16B /* LineNode.swift */; };
 		BB11E60A2BB7266000C3D16B /* MeasureSCNView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB11E6032BB7266000C3D16B /* MeasureSCNView.swift */; };
@@ -175,6 +177,7 @@
 		993155EB2B6BF5720008EE8C /* IncreasedTapAreaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreasedTapAreaButton.swift; sourceTree = "<group>"; };
 		999090582B88C190000FA8B6 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		9990905A2B88C196000FA8B6 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		BB0C7E322CA836B100A57F6A /* Animation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Animation.json; sourceTree = "<group>"; };
 		BB11E6002BB7266000C3D16B /* AreaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaViewController.swift; sourceTree = "<group>"; };
 		BB11E6022BB7266000C3D16B /* LineNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineNode.swift; sourceTree = "<group>"; };
 		BB11E6032BB7266000C3D16B /* MeasureSCNView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasureSCNView.swift; sourceTree = "<group>"; };
@@ -305,6 +308,7 @@
 			files = (
 				BBBFF9352C985D1400737C36 /* RealmSwift in Frameworks */,
 				BBB2B25F2C21B52D0099B6FE /* iAd.framework in Frameworks */,
+				BB0C7E2F2CA8338D00A57F6A /* Lottie in Frameworks */,
 				BBBFF9322C985C7C00737C36 /* ApphudSDK in Frameworks */,
 				BB52F7732C16D62D00FECB23 /* CoreData.framework in Frameworks */,
 				FA6E515B2B59F9A30041B7EC /* ARKit.framework in Frameworks */,
@@ -815,6 +819,7 @@
 		FAEF71812B465886000C232A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BB0C7E322CA836B100A57F6A /* Animation.json */,
 				FA6E507E2B5109320041B7EC /* Enums */,
 				FAC3541F2B47C7B200C473C5 /* Fonts */,
 				FAEF71822B4658A4000C232A /* Constants */,
@@ -926,6 +931,7 @@
 				BB9E2C2D2C2AC7F900F339FE /* GBDeviceInfo */,
 				BBBFF9312C985C7C00737C36 /* ApphudSDK */,
 				BBBFF9342C985D1400737C36 /* RealmSwift */,
+				BB0C7E2E2CA8338D00A57F6A /* Lottie */,
 			);
 			productName = Measure;
 			productReference = FAEF71432B465668000C232A /* PlantID App.app */;
@@ -1004,6 +1010,7 @@
 				BB9E2C2C2C2AC7F900F339FE /* XCRemoteSwiftPackageReference "GBDeviceInfo" */,
 				BBBFF9302C985C7C00737C36 /* XCRemoteSwiftPackageReference "ApphudSDK" */,
 				BBBFF9332C985D1400737C36 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				BB0C7E2D2CA8338D00A57F6A /* XCRemoteSwiftPackageReference "lottie-spm" */,
 			);
 			productRefGroup = FAEF71442B465668000C232A /* Products */;
 			projectDirPath = "";
@@ -1026,6 +1033,7 @@
 				FAC3542D2B47C7B300C473C5 /* SFProDisplay-BlackItalic.ttf in Resources */,
 				BB19E0B32C8549A4009CED7D /* SettingsListCell.xib in Resources */,
 				BB5B17212C87F36500E0769D /* MyGardenRemoveViewController.xib in Resources */,
+				BB0C7E332CA836B100A57F6A /* Animation.json in Resources */,
 				BB291CE22C6D176F00A31590 /* ChecklistCollectionViewCell.xib in Resources */,
 				FAC3542C2B47C7B300C473C5 /* SFProDisplay-Regular.ttf in Resources */,
 				FAEF71532B46566A000C232A /* LaunchScreen.storyboard in Resources */,
@@ -1335,14 +1343,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = K2V5DYJ2C2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Measure/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Plant ID";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to identify and provide care tips for your plants through image recognition.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your library to identify and provide care tips for your plants through image recognition.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -1354,7 +1363,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.plant.Kuyman;
+				PRODUCT_BUNDLE_IDENTIFIER = com.plant.Kuyman2222;
 				PRODUCT_NAME = "PlantID App";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1373,14 +1382,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = K2V5DYJ2C2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Measure/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Plant ID";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to identify and provide care tips for your plants through image recognition.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your library to identify and provide care tips for your plants through image recognition.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -1392,7 +1402,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.plant.Kuyman;
+				PRODUCT_BUNDLE_IDENTIFIER = com.plant.Kuyman2222;
 				PRODUCT_NAME = "PlantID App";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1531,6 +1541,14 @@
 				minimumVersion = 5.1.8;
 			};
 		};
+		BB0C7E2D2CA8338D00A57F6A /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.0;
+			};
+		};
 		BB9E2C2C2C2AC7F900F339FE /* XCRemoteSwiftPackageReference "GBDeviceInfo" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/lmirosevic/GBDeviceInfo";
@@ -1562,6 +1580,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 993155E62B6BE26A0008EE8C /* XCRemoteSwiftPackageReference "SPAlert" */;
 			productName = AlertKit;
+		};
+		BB0C7E2E2CA8338D00A57F6A /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB0C7E2D2CA8338D00A57F6A /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
 		};
 		BB9E2C2D2C2AC7F900F339FE /* GBDeviceInfo */ = {
 			isa = XCSwiftPackageProductDependency;
