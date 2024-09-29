@@ -222,4 +222,9 @@ extension ScannerViewController: ScannerFirstViewControllerDelegate {
         let type = ScannerType(rawValue: type)!
         scannerType = type
     }
+    
+    func scannerFirstViewControllerDismiss(_ controller: ScannerFirstViewController) {
+        self.tabBarController?.tabBar.isHidden = false
+        self.tabBarController?.selectedIndex = 0
+    }
 }

@@ -7,6 +7,7 @@ enum ScannerType: Int {
 
 @objc protocol ScannerFirstViewControllerDelegate: AnyObject {
     func scannerFirstViewController(_ controller: ScannerFirstViewController, scannerType type: Int)
+    func scannerFirstViewControllerDismiss(_ controller: ScannerFirstViewController)
 }
 
 class ScannerFirstViewController: BaseViewController {
@@ -41,6 +42,11 @@ class ScannerFirstViewController: BaseViewController {
     @objc func diagnoseAction(_ sender: UIButton) {
         scannerType = .diagnose
         delegate?.scannerFirstViewController(self, scannerType: ScannerType.diagnose.rawValue)
+        dismiss(animated: true)
+    }
+    
+    @IBAction func close(_ sender: UIButton) {
+        delegate?.scannerFirstViewControllerDismiss(self)
         dismiss(animated: true)
     }
 }
