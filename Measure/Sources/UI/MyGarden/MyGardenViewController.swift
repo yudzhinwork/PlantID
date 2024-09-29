@@ -240,34 +240,112 @@ extension MyGardenViewController: MyGardenCellDelegate {
         self.present(vc, animated: true)
     }
     
-    func myGardenCellWatering(_ myGardenCell: MyGardenCell) {
-        let vc = DataPickerViewController()
-        vc.pickerType = .watering
-        vc.indexPath = myGardenTableView.indexPath(for: myGardenCell)
-        vc.delegate = self
-        vc.modalPresentationStyle = .overFullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        self.present(vc, animated: true)
+    func myGardenCellWatering(_ myGardenCell: MyGardenCell, isOverdue: Bool) {
+        if isOverdue {
+            guard let plant = plantResponses?[myGardenTableView.indexPath(for: myGardenCell)!.row] else {
+                return
+            }
+            do {
+                try mainRealm.write {
+                    let currentDate = Date()
+                    let calendar = Calendar.current
+                    let components = calendar.dateComponents([.day], from: plant.scanDate ?? Date(),
+                                                             to: plant.wateringDate ?? Date())
+                    var daysDifference = components.day ?? 0
+                    
+                    if daysDifference < 0 {
+                        daysDifference = 0
+                    }
+                    
+                    if let newWateringDate = calendar.date(byAdding: .day, value: daysDifference, to: currentDate) {
+                        plant.wateringDate = newWateringDate
+                    }
+                }
+                myGardenTableView.reloadRows(at: [myGardenTableView.indexPath(for: myGardenCell)!], with: .automatic)
+            } catch {
+                print("Ошибка при обновлении даты: \(error.localizedDescription)")
+            }
+        } else {
+            let vc = DataPickerViewController()
+            vc.pickerType = .watering
+            vc.indexPath = myGardenTableView.indexPath(for: myGardenCell)
+            vc.delegate = self
+            vc.modalPresentationStyle = .overFullScreen
+            vc.modalTransitionStyle = .crossDissolve
+            self.present(vc, animated: true)
+        }
     }
     
-    func myGardenCellSpraying(_ myGardenCell: MyGardenCell) {
-        let vc = DataPickerViewController()
-        vc.indexPath = myGardenTableView.indexPath(for: myGardenCell)
-        vc.pickerType = .spraying
-        vc.delegate = self
-        vc.modalPresentationStyle = .overFullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        self.present(vc, animated: true)
+    func myGardenCellSpraying(_ myGardenCell: MyGardenCell, isOverdue: Bool) {
+        if isOverdue {
+            guard let plant = plantResponses?[myGardenTableView.indexPath(for: myGardenCell)!.row] else {
+                return
+            }
+            do {
+                try mainRealm.write {
+                    let currentDate = Date()
+                    let calendar = Calendar.current
+                    let components = calendar.dateComponents([.day], from: plant.scanDate ?? Date(),
+                                                             to: plant.sprayingDate ?? Date())
+                    var daysDifference = components.day ?? 0
+                    
+                    if daysDifference < 0 {
+                        daysDifference = 0
+                    }
+                    
+                    if let newWateringDate = calendar.date(byAdding: .day, value: daysDifference, to: currentDate) {
+                        plant.sprayingDate = newWateringDate
+                    }
+                }
+                myGardenTableView.reloadRows(at: [myGardenTableView.indexPath(for: myGardenCell)!], with: .automatic)
+            } catch {
+                print("Ошибка при обновлении даты: \(error.localizedDescription)")
+            }
+        } else {
+            let vc = DataPickerViewController()
+            vc.indexPath = myGardenTableView.indexPath(for: myGardenCell)
+            vc.pickerType = .spraying
+            vc.delegate = self
+            vc.modalPresentationStyle = .overFullScreen
+            vc.modalTransitionStyle = .crossDissolve
+            self.present(vc, animated: true)
+        }
     }
     
-    func myGardenCellWFertilize(_ myGardenCell: MyGardenCell) {
-        let vc = DataPickerViewController()
-        vc.indexPath = myGardenTableView.indexPath(for: myGardenCell)
-        vc.pickerType = .fertilize
-        vc.delegate = self
-        vc.modalPresentationStyle = .overFullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        self.present(vc, animated: true)
+    func myGardenCellWFertilize(_ myGardenCell: MyGardenCell, isOverdue: Bool) {
+        if isOverdue {
+            guard let plant = plantResponses?[myGardenTableView.indexPath(for: myGardenCell)!.row] else {
+                return
+            }
+            do {
+                try mainRealm.write {
+                    let currentDate = Date()
+                    let calendar = Calendar.current
+                    let components = calendar.dateComponents([.day], from: plant.scanDate ?? Date(),
+                                                             to: plant.fertilizeDate ?? Date())
+                    var daysDifference = components.day ?? 0
+                    
+                    if daysDifference < 0 {
+                        daysDifference = 0
+                    }
+                    
+                    if let newWateringDate = calendar.date(byAdding: .day, value: daysDifference, to: currentDate) {
+                        plant.fertilizeDate = newWateringDate
+                    }
+                }
+                myGardenTableView.reloadRows(at: [myGardenTableView.indexPath(for: myGardenCell)!], with: .automatic)
+            } catch {
+                print("Ошибка при обновлении даты: \(error.localizedDescription)")
+            }
+        } else {
+            let vc = DataPickerViewController()
+            vc.indexPath = myGardenTableView.indexPath(for: myGardenCell)
+            vc.pickerType = .fertilize
+            vc.delegate = self
+            vc.modalPresentationStyle = .overFullScreen
+            vc.modalTransitionStyle = .crossDissolve
+            self.present(vc, animated: true)
+        }
     }
 }
 

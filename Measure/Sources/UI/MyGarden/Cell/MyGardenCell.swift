@@ -11,9 +11,9 @@ fileprivate struct Colors {
 
 @objc protocol MyGardenCellDelegate: AnyObject {
     func myGardenCellRemove(_ myGardenCell: MyGardenCell)
-    func myGardenCellWatering(_ myGardenCell: MyGardenCell)
-    func myGardenCellSpraying(_ myGardenCell: MyGardenCell)
-    func myGardenCellWFertilize(_ myGardenCell: MyGardenCell)
+    func myGardenCellWatering(_ myGardenCell: MyGardenCell, isOverdue: Bool)
+    func myGardenCellSpraying(_ myGardenCell: MyGardenCell, isOverdue: Bool)
+    func myGardenCellWFertilize(_ myGardenCell: MyGardenCell, isOverdue: Bool)
 }
 
 class MyGardenCell: UITableViewCell {
@@ -29,6 +29,10 @@ class MyGardenCell: UITableViewCell {
     
     weak var delegate: MyGardenCellDelegate?
     
+    var wateringDateOverdue = false
+    var sprayingDateOverdue = false
+    var fertilizeDateOverdue = false
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -43,6 +47,9 @@ class MyGardenCell: UITableViewCell {
         timesLabel.forEach { text in text.textColor = nil }
         categoryLabel.forEach { text in text.textColor = nil }
         categoryImages.forEach { view in view.tintColor = nil }
+        wateringDateOverdue = false
+        sprayingDateOverdue = false
+        fertilizeDateOverdue = false
     }
     
     func configure() {
@@ -66,15 +73,15 @@ class MyGardenCell: UITableViewCell {
     }
     
     @IBAction func wateringAction(_ sender: UIButton) {
-        delegate?.myGardenCellWatering(self)
+        delegate?.myGardenCellWatering(self, isOverdue: wateringDateOverdue)
     }
     
     @IBAction func sprayingAction(_ sender: UIButton) {
-        delegate?.myGardenCellSpraying(self)
+        delegate?.myGardenCellSpraying(self, isOverdue: sprayingDateOverdue)
     }
     
     @IBAction func fertilizAction(_ sender: UIButton) {
-        delegate?.myGardenCellWFertilize(self)
+        delegate?.myGardenCellWFertilize(self, isOverdue: fertilizeDateOverdue)
     }
     
     func fill(_ object: PlantIdentificationResponse) {
@@ -91,10 +98,13 @@ class MyGardenCell: UITableViewCell {
             let daysDifference = components.day ?? 0
             if daysDifference == 0 {
                 timesLabel[0].text = "Today"
+                wateringDateOverdue = true
             } else if daysDifference < 0 {
                 timesLabel[0].text = "\(-daysDifference) days ago"
+                wateringDateOverdue = true
             } else {
                 timesLabel[0].text = "in \(daysDifference) days"
+                wateringDateOverdue = false
             }
             if daysDifference <= 0 {
                 optionsViews[0].layer.borderColor = UIColor(hexString: "#FF0000")!.cgColor
@@ -113,10 +123,13 @@ class MyGardenCell: UITableViewCell {
             let daysDifference = components.day ?? 0
             if daysDifference == 0 {
                 timesLabel[1].text = "Today"
+                sprayingDateOverdue = true
             } else if daysDifference < 0 {
                 timesLabel[1].text = "\(-daysDifference) days ago"
+                sprayingDateOverdue = true
             } else {
                 timesLabel[1].text = "in \(daysDifference) days"
+                sprayingDateOverdue = false
             }
             if daysDifference <= 0 {
                 optionsViews[1].layer.borderColor = UIColor(hexString: "#FF0000")!.cgColor
@@ -135,10 +148,13 @@ class MyGardenCell: UITableViewCell {
             let daysDifference = components.day ?? 0
             if daysDifference == 0 {
                 timesLabel[2].text = "Today"
+                fertilizeDateOverdue = true
             } else if daysDifference < 0 {
                 timesLabel[2].text = "\(-daysDifference) days ago"
+                fertilizeDateOverdue = true
             } else {
                 timesLabel[2].text = "in \(daysDifference) days"
+                fertilizeDateOverdue = false
             }
             if daysDifference <= 0 {
                 optionsViews[2].layer.borderColor = UIColor(hexString: "#FF0000")!.cgColor
