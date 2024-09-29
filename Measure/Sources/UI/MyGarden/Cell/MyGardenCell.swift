@@ -89,7 +89,16 @@ class MyGardenCell: UITableViewCell {
             timesLabel[0].textColor = UIColor(hexString: "#8F9A8C")!
             let components = calendar.dateComponents([.day], from: currentDate, to: wateringDate)
             let daysDifference = components.day ?? 0
-            timesLabel[0].text = "in \(daysDifference) days"
+            if daysDifference == 0 {
+                timesLabel[0].text = "Today"
+            } else if daysDifference < 0 {
+                timesLabel[0].text = "\(-daysDifference) days ago"
+            } else {
+                timesLabel[0].text = "in \(daysDifference) days"
+            }
+            if daysDifference <= 0 {
+                optionsViews[0].layer.borderColor = UIColor(hexString: "#FF0000")!.cgColor
+            }
             categoryLabel[0].textColor = UIColor(hexString: "#8F9A8C")!
             categoryImages[0].tintColor = UIColor(hexString: "#12AD5C")!
         } else {
@@ -102,7 +111,16 @@ class MyGardenCell: UITableViewCell {
             timesLabel[1].textColor = UIColor(hexString: "#8F9A8C")!
             let components = calendar.dateComponents([.day], from: currentDate, to: wateringDate)
             let daysDifference = components.day ?? 0
-            timesLabel[1].text = "in \(daysDifference) days"
+            if daysDifference == 0 {
+                timesLabel[1].text = "Today"
+            } else if daysDifference < 0 {
+                timesLabel[1].text = "\(-daysDifference) days ago"
+            } else {
+                timesLabel[1].text = "in \(daysDifference) days"
+            }
+            if daysDifference <= 0 {
+                optionsViews[1].layer.borderColor = UIColor(hexString: "#FF0000")!.cgColor
+            }
             categoryLabel[1].textColor = UIColor(hexString: "#8F9A8C")!
             categoryImages[1].tintColor = UIColor(hexString: "#12AD5C")!
         } else {
@@ -115,7 +133,16 @@ class MyGardenCell: UITableViewCell {
             timesLabel[2].textColor = UIColor(hexString: "#8F9A8C")!
             let components = calendar.dateComponents([.day], from: currentDate, to: fertilizeDate)
             let daysDifference = components.day ?? 0
-            timesLabel[2].text = "in \(daysDifference) days"
+            if daysDifference == 0 {
+                timesLabel[2].text = "Today"
+            } else if daysDifference < 0 {
+                timesLabel[2].text = "\(-daysDifference) days ago"
+            } else {
+                timesLabel[2].text = "in \(daysDifference) days"
+            }
+            if daysDifference <= 0 {
+                optionsViews[2].layer.borderColor = UIColor(hexString: "#FF0000")!.cgColor
+            }
             categoryLabel[2].textColor = UIColor(hexString: "#8F9A8C")!
             categoryImages[2].tintColor = UIColor(hexString: "#12AD5C")!
         } else {
