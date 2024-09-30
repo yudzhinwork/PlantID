@@ -20,8 +20,11 @@ class ScannerScanningViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let resizedImage = resizeImage(image: scanningImage, targetWidth: 800)
+        
         scanningImageView.image = scanningImage
-        guard let imageData = scanningImage.jpegData(compressionQuality: 0.8) else { return }
+        guard let imageData = resizedImage?.jpegData(compressionQuality: 0.8) else { return }
         processImage(imageData)
         
         animationView = .init(name: "Animation")
@@ -64,6 +67,19 @@ class ScannerScanningViewController: BaseViewController {
         case .diagnose:
             diagnosePlant(with: base64String)
         }
+    }
+    
+    func resizeImage(image: UIImage, targetWidth: CGFloat) -> UIImage? {
+        let size = image.size
+        let widthRatio = targetWidth / size.width
+        let newSize = CGSize(width: targetWidth, height: size.height * widthRatio)
+        
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
+        image.draw(in: CGRect(origin: .zero, size: newSize))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage
     }
     
     func diagnosePlant(with base64Image: String) {
