@@ -32,6 +32,7 @@
 		BB28F41E2C1B687F004A0519 /* HistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB28F41D2C1B687F004A0519 /* HistoryDetailViewController.swift */; };
 		BB291CE12C6D176F00A31590 /* ChecklistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB291CDF2C6D176F00A31590 /* ChecklistCollectionViewCell.swift */; };
 		BB291CE22C6D176F00A31590 /* ChecklistCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB291CE02C6D176F00A31590 /* ChecklistCollectionViewCell.xib */; };
+		BB355ADE2CBA7AE5007127BA /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BB355ADD2CBA7AE5007127BA /* Localizable.xcstrings */; };
 		BB36532A2C67AC6000858C98 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3653292C67AC6000858C98 /* BaseViewController.swift */; };
 		BB36532D2C69218F00858C98 /* HistoryDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB36532C2C69218F00858C98 /* HistoryDataViewController.swift */; };
 		BB3653322C6B47AA00858C98 /* OnboardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3653312C6B47AA00858C98 /* OnboardingButton.swift */; };
@@ -195,6 +196,7 @@
 		BB28F41D2C1B687F004A0519 /* HistoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailViewController.swift; sourceTree = "<group>"; };
 		BB291CDF2C6D176F00A31590 /* ChecklistCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistCollectionViewCell.swift; sourceTree = "<group>"; };
 		BB291CE02C6D176F00A31590 /* ChecklistCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChecklistCollectionViewCell.xib; sourceTree = "<group>"; };
+		BB355ADD2CBA7AE5007127BA /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		BB3653292C67AC6000858C98 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BB36532C2C69218F00858C98 /* HistoryDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDataViewController.swift; sourceTree = "<group>"; };
 		BB3653312C6B47AA00858C98 /* OnboardingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingButton.swift; sourceTree = "<group>"; };
@@ -845,6 +847,7 @@
 				FAEF71892B46593C000C232A /* Coordinator */,
 				FAEF71462B465668000C232A /* AppDelegate.swift */,
 				FAEF71482B465668000C232A /* SceneDelegate.swift */,
+				BB355ADD2CBA7AE5007127BA /* Localizable.xcstrings */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -1003,6 +1006,12 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
+				fr,
+				de,
+				it,
+				ja,
+				nl,
 			);
 			mainGroup = FAEF713A2B465668000C232A;
 			packageReferences = (
@@ -1054,6 +1063,7 @@
 				BB19E0AF2C85478A009CED7D /* SettingsSwitchCell.xib in Resources */,
 				FAC3542F2B47C7B300C473C5 /* SFProDisplay-HeavyItalic.ttf in Resources */,
 				BB56E7FB2C8A2E6000A3723B /* ScannerViewController.xib in Resources */,
+				BB355ADE2CBA7AE5007127BA /* Localizable.xcstrings in Resources */,
 				FAEF71502B46566A000C232A /* Assets.xcassets in Resources */,
 				FAC354302B47C7B300C473C5 /* SFProDisplay-LightItalic.ttf in Resources */,
 				FAC354312B47C7B300C473C5 /* SFProDisplay-UltraLightItalic.ttf in Resources */,
@@ -1276,6 +1286,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -1333,6 +1344,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

@@ -1,0 +1,149 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Absolutely incredible" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Absolutely incredible. Even though I've just started using this app, I've already noticed a significant improvement in my plants. The stress of keeping track of watering and feeding schedules is gone, thanks to its intuitive reminders and easy-to-follow care tips."
+          }
+        }
+      }
+    },
+    "continue" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continue"
+          }
+        }
+      }
+    },
+    "DiagnoseDisease" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diagnose Disease"
+          }
+        }
+      }
+    },
+    "DiscoverTreatment" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Discover treatment"
+          }
+        }
+      }
+    },
+    "EffortlesslyManage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Effortlessly manage your plants with reminders and customized care reports"
+          }
+        }
+      }
+    },
+    "Feedback" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Feedback"
+          }
+        }
+      }
+    },
+    "IdentifyPlant" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Identify Plant"
+          }
+        }
+      }
+    },
+    "IncredibleTool" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Incredible tool for plant care. I’ve been using this app for a few weeks now, and it’s made a huge difference. My plants are healthier, and I don’t have to worry about forgetting when to water or fertilize. The notifications are spot-on and really helpful."
+          }
+        }
+      }
+    },
+    "PlantAssistant" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This app feels like a personal plant assistant, offering helpful reminders and plant identification features that make caring for my plants so much easier and enjoyable."
+          }
+        }
+      }
+    },
+    "Read testimonials" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Read testimonials about how our app is changing plant care"
+          }
+        }
+      }
+    },
+    "skip" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skip"
+          }
+        }
+      }
+    },
+    "TreatmentPlant" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "9.99$/week, 99.9% accuracy of identification, tips and treatment plant"
+          }
+        }
+      }
+    },
+    "TryPlantIdentifier" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Try Plant Identifier\n"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
